@@ -40,6 +40,10 @@ interface BootstrapSelectOptions {
 }
 
 interface JQuery {
-    selectpicker(opts?: BootstrapSelectOptions): void
-    selectpicker(method: string, ...args: Array<string | Array<string>>): void
+    selectpicker(opts?: BootstrapSelectOptions): this
+
+    selectpicker(method: "deselectAll" | "destroy" | "mobile" | "refresh" | "render" | "selectAll" | "setStyle" | "toggle"): this
+    selectpicker(method: "val"): string | string[]
+    selectpicker(method: "val", values: string | string[]): this
 }
+
